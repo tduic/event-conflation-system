@@ -384,7 +384,7 @@ quantinno-event-conflation/
 
 ## Performance Benchmarks
 
-### Single Node (M1 MacBook Pro)
+### Single Node (M5 MacBook Pro)
 
 | Metric | Value |
 |--------|-------|
