@@ -1,0 +1,24 @@
+conflation:
+  idle_interval: 30  # seconds
+  max_buffer_size: 10000
+
+state:
+  backend: "memory"  # memory, file
+  checkpoint_interval: 60
+  file:
+    state_path: "./data/state.json"
+    checkpoint_path: "./data/checkpoints/"
+
+output:
+  writer: "json"
+  file_path: "./data/conflated_events.json"
+  enable_batching: true
+  batch_size: 100
+
+error_handling:
+  max_clock_skew: 300  # 5 minutes
+  dlq_path: "./data/dlq.json"
+
+logging:
+  level: "INFO"
+  format: "text"  # text or json
