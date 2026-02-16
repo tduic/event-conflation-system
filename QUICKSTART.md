@@ -3,15 +3,24 @@
 ## Installation
 
 ```bash
-# Create virtual environment
+# Clone the repository
+git clone https://github.com/tduic/event-conflation-system.git
+cd event-conflation-system
+
+# Create and activate virtual environment
 python3 -m venv venv
-source venv/bin/activate
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt
 
 # Install in development mode
 pip install -e .
+```
+
+**Note:** Always make sure the virtual environment is activated before running commands:
+```bash
+source venv/bin/activate  # Run this first if you see "ModuleNotFoundError"
 ```
 
 ## Run the Demo

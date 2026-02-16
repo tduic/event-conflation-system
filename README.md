@@ -66,16 +66,33 @@ This system simulates an AWS EventBridge → DynamoDB pipeline locally, designed
 ### Installation
 
 ```bash
-cd quantinno-event-conflation
+# Clone the repository
+git clone https://github.com/tduic/event-conflation-system.git
+cd event-conflation-system
+
+# Create and activate virtual environment
+python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies
 pip install -r requirements.txt
 
-# Or with Poetry
+# Install package in development mode
+pip install -e .
+```
+
+Or with Poetry:
+```bash
 poetry install
+poetry shell
 ```
 
 ### Basic Usage
 
 ```bash
+# Make sure virtual environment is activated
+source venv/bin/activate  # If not already activated
+
 # Generate test events
 python scripts/generate_events.py -n 100 -i 10 -o events.json
 
