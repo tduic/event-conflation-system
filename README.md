@@ -2,6 +2,12 @@
 
 A Python-based, cloud-native event conflation system that aggregates bursty asynchronous events per object ID. The system waits for a configurable idle period (default 30 seconds) since the last event before emitting a single aggregated record downstream.
 
+## Requirements
+
+- **Python**: 3.9+ (Built and tested with Python 3.14.2)
+- **OS**: macOS, Linux, Windows
+- **Memory**: ~100MB + 2KB per active event ID
+
 ## Overview
 
 This system simulates an AWS EventBridge → DynamoDB pipeline locally, designed for horizontal scalability and fault tolerance while providing a working single-node prototype with comprehensive tests.
@@ -411,4 +417,4 @@ MIT License - See LICENSE file for details
 
 ---
 
-**Built with**: Python 3.9+, AsyncIO, Pydantic, PyYAML, pytest
+**Built with**: Python 3.14.2 (compatible with 3.9+), AsyncIO, Pydantic 2.x, PyYAML, pytest
