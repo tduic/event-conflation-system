@@ -80,6 +80,9 @@ cd event-conflation-system
 python3 -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 
+# Upgrade pip (important for pyproject.toml support)
+pip install --upgrade pip
+
 # Install dependencies
 pip install -r requirements.txt
 

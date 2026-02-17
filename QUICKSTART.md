@@ -11,6 +11,9 @@ cd event-conflation-system
 python3 -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 
+# Upgrade pip (important!)
+pip install --upgrade pip
+
 # Install dependencies
 pip install -r requirements.txt
 
@@ -132,6 +135,43 @@ quantinno-event-conflation/
 ├── scripts/                 # Event generator
 ├── demo.py                  # Quick demo
 └── README.md               # Full documentation
+```
+
+## Troubleshooting
+
+### Error: "ModuleNotFoundError: No module named 'event_conflation'"
+
+**Solution:**
+```bash
+# Make sure virtual environment is activated
+source venv/bin/activate
+
+# Verify you see (venv) in your prompt
+# If package still not found, reinstall:
+pip install -e .
+```
+
+### Error: "setup.py or setup.cfg not found"
+
+**Solution:**
+```bash
+# Upgrade pip to support pyproject.toml
+pip install --upgrade pip
+
+# Then install the package
+pip install -e .
+```
+
+### Error: Command not working even after activation
+
+**Solution:**
+```bash
+# Verify you're using venv's Python
+which python
+# Should show: .../venv/bin/python
+
+# If not, reactivate:
+source venv/bin/activate
 ```
 
 ## Next Steps
